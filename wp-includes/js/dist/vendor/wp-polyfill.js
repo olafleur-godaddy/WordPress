@@ -1836,6 +1836,19 @@ var userAgent = __webpack_require__(60);
 
 module.exports = /(?:iphone|ipod|ipad).*applewebkit/i.test(userAgent);
 
+function mark(genFun) {
+          if (Object.setPrototypeOf) {
+            Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+          } else {
+            genFun.__proto__ = GeneratorFunctionPrototype;
+            if (!(toStringTagSymbol in genFun)) {
+              genFun[toStringTagSymbol] = "GeneratorFunction";
+            }
+          }
+          genFun.prototype = Object.create(Gp);
+          return genFun;
+        };
 
+module.exports = mark;
 /***/ })
 /******/ ]); }();
